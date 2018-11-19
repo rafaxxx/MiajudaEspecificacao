@@ -9,7 +9,7 @@ sig Login {}
 sig Professor {
 	logarProf : one Login,
 	seCadastrar : one Cadastro, 
-	cadastrarTurmas : one Cadastro,
+	cadastrarTurmas : one Turma,
 	adicionarMaterial : one Material 
 }
 
