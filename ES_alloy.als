@@ -9,7 +9,7 @@ sig Login {}
 sig Professor {
 	logarProf : one Login,
 	seCadastrar : one Cadastro, 
-	cadastrarTurmas : one Turma,
+	cadastrarTurmas : some Turma,
 	adicionarMaterial : one Material 
 }
 
@@ -27,8 +27,5 @@ sig Monitor extends Aluno {
 }
 
 -- Fatos --
-
 fact { all c : Cadastro | some c.~seCadastrar } -- apenas não cadastrados podem se cadastrar
 fact { all m : Material | some m.~enviarArquivos or some m.~adicionarMaterial } -- materiais so podem ser adicionados por monitor ou professor
-
--- Predicados -- 
